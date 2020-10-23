@@ -12,3 +12,4 @@ vetorPessoas <- c("Xicão", "Zé", "Tião", "Pedrão")
 vetorCachacasIngeridas <- c(3, 4, 1, 12)
 
 cbind(vetorPessoas, vetorCachacasIngeridas)
+rbind(vetorPessoas, vetorCachacasIngeridas)
