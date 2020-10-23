@@ -12,4 +12,4 @@ varL <- "TRUE"
 
 as.logical(varI)
 
-as.character(varL)
+as.logical(varL)
