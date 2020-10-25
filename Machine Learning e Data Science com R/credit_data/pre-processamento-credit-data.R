@@ -1,4 +1,4 @@
-base = read.csv('www/r/Machine Learning e Data Science com R/credit_data.csv')
+base = read.csv('credit_data//credit_data.csv')
 base$clientid = NULL
 summary(base)
 
