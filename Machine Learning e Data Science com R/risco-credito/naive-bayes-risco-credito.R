@@ -1,4 +1,4 @@
-base = read.csv("www/r/Machine Learning e Data Science com R/risco_credito.csv")
+base = read.csv("risco-credito/risco_credito.csv")
 
 install.packages("e1071")
 library(e1071)
@@ -14,6 +14,6 @@ garantias = c("adequada")
 renda = c("0_15")
 df = data.frame(historia, divida, garantias, renda)
 
-previsao = predict(classificador, newdata = df, 'raw')
+previsao = predict(classificador, newdata = df)
 print(previsao)
 
