@@ -1,27 +1,20 @@
-setwd("~/www/r")
-setwd("~/www/r/Machine Learning e Data Science com R")
-base = read.csv("risco_credito.csv")
 base = read.csv("risco-credito/risco_credito.csv")
-install.packages('rpart')
-#install.packages('rpart')
-liberary('rpart')
+
 #install.packages('rpart')
 library('rpart')
-classificador = rpart(formula = risco ~ ., data = base)
-print(classificador)
-plot(classificador)
-classificador = rpart(formula = risco ~ ., data = base, control = rpart.cont(minbucket = 1))
+
 classificador = rpart(formula = risco ~ ., data = base, control = rpart.control(minbucket = 1))
+
 plot(classificador)
-texxt(classificador)
 text(classificador)
 print(classificador)
-install.packages('rpart.plot')
+
 #install.packages('rpart.plot')
 library('rpart.plot')
+
 rpart.plot(classificador)
-df = data.frame(historia,divida,garantias,renda)
-df = data.frame(historia ,divida,garantias,renda)
+
+
 # historia: boa, divida: alta, garantias: nenhuma, renda: >35
 # historia: ruim, divida: alta, garantias: adeqauda, renda < 15
 historia = c('boa', 'ruim')
@@ -29,6 +22,5 @@ divida = c('alta', 'alta')
 garantias = c('nenhuma', 'nenhuma')
 renda = c('acima_35', '0_15')
 df = data.frame(historia ,divida,garantias,renda)
-View(df)
+
 previsoes = predict(classificador, df)
-View(previsoes)
