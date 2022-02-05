@@ -32,3 +32,4 @@ base_treinamento = subset(base, divisao == TRUE)
 base_testes = subset(base, divisao == FALSE)
 
 
+
