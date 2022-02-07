@@ -4,7 +4,7 @@ sum(is.na(base))
 
 # Encoding da Classe (Transformar em fatores)
 base$quality = ifelse(base$quality<6, 0, 1)
-hist(base$quality, main = 'Qualidade do Vinho')
+hist(base$quality, main = 'Qualidade do Vinho', ylab = 'Qunatidade')
 base$quality = factor(base$quality, levels = c(0, 1))
 
 library(caTools)
@@ -27,7 +27,7 @@ previsoes = predict(classificador, newdata = base_testes[-12], type = 'class')
 matriz_confusao = table(base_testes[, 12], previsoes)
 print(matriz_confusao)
 
-# install.packages('caret')
+# install.packages('caret');
 library(caret)
 
 # estatisticas do algoritmo de previsão
