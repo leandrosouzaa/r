@@ -27,8 +27,13 @@ base_treinamento = subset(x = base, divisao == TRUE)
 base_testes = subset(base, divisao == FALSE)
 
 classificador = rpart(formula = income ~ ., data = base_treinamento)
-
 library('rpart.plot')
+rpart.plot(classificador)
+
+poda = classificador$cptable[which.min(classificador$cptable[, "xerror"]), "CP"]
+prune(classificador, poda)
+# exemplo de poda com maior nivel
+# prune(classificador, 0.05)
 rpart.plot(classificador)
 
 previsoes = predict(classificador, newdata = base_testes[-15], type = 'class')
